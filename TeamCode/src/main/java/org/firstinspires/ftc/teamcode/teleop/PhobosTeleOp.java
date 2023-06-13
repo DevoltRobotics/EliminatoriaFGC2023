@@ -2,6 +2,7 @@ package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
@@ -35,11 +36,23 @@ public class PhobosTeleOp extends OpMode {
 
         double turbo = 1.0 - chosenTrigger * 0.6;
 
-        robot.left.setPower((y - x) * turbo);
-        robot.right.setPower((y + x) * turbo);
+        robot.left.setPower((y + x) * turbo);
+        robot.right.setPower((y - x) * turbo);
 
         telemetry.addData("x",  "%.2f", x);
         telemetry.addData("y", "%.2f", y);
+
+        // START B
+
+        robot.clawArm.setPosition(Range.clip(robot.clawArm.getPosition() + (gamepad1.right_trigger - gamepad1.left_trigger) * 0.008, 0.3, 0.9));
+
+        if(gamepad1.a) {
+            robot.clawLeft.setPosition(0.6);
+            robot.clawRight.setPosition(0.3);
+        } else if(gamepad1.b) {
+            robot.clawLeft.setPosition(0.1);
+            robot.clawRight.setPosition(0.8);
+        }
     }
 
 }
