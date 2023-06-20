@@ -11,11 +11,16 @@ public class Autonomo extends LinearOpMode {
     @Override
     public void runOpMode() {
         Robot robot = new Robot();
+        robot.init(hardwareMap, telemetry);
+        robot.isAuto = true;
 
         waitForStart();
 
-        robot.forward(10, 3);
-        robot.backwards(5, 3);
+        robot.clawOpen();
+        robot.forward(10, 0.3, 3);
+
+        robot.clawClose();
+        robot.backwards(10, 0.3, 3);
     }
 
 }

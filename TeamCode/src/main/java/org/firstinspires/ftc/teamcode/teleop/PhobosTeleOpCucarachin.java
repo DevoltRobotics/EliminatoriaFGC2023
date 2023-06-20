@@ -12,7 +12,7 @@ public class PhobosTeleOpCucarachin extends OpMode {
 
     @Override
     public void init() {
-        robot.init(hardwareMap);
+        robot.init(hardwareMap, telemetry);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData(">", "La fiera de cucaracho");

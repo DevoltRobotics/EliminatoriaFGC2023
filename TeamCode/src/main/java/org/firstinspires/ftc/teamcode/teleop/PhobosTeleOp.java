@@ -13,7 +13,7 @@ public class PhobosTeleOp extends OpMode {
 
     @Override
     public void init() {
-        robot.init(hardwareMap);
+        robot.init(hardwareMap, telemetry);
 
         // Send telemetry message to signify robot waiting;
         telemetry.addData(">", "La fiera de cucaracho");
@@ -41,6 +41,9 @@ public class PhobosTeleOp extends OpMode {
 
         telemetry.addData("x",  "%.2f", x);
         telemetry.addData("y", "%.2f", y);
+
+        telemetry.addData("left encoder", robot.left.getCurrentPosition());
+        telemetry.addData("right encoder", robot.right.getCurrentPosition());
 
         // START B
 
