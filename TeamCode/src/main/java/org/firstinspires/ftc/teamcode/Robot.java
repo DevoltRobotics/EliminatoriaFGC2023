@@ -11,7 +11,8 @@ public class Robot {
     public DcMotor left;
     public DcMotor right;
 
-    public Servo clawArm;
+    public DcMotor clawArm;
+    //public DcMotor clawArm2;
 
     public Servo clawLeft;
     public Servo clawRight;
@@ -25,15 +26,21 @@ public class Robot {
     public void init(HardwareMap hardwareMap) {
         left = hardwareMap.get(DcMotor.class, "left");
         right = hardwareMap.get(DcMotor.class, "right");
-
-        left.setDirection(DcMotorSimple.Direction.REVERSE);
-
-        clawArm = hardwareMap.get(Servo.class, "armclaw");
+        clawArm = hardwareMap.get(DcMotor.class, "armclaw");
+        //clawArm2 = hardwareMap.get(DcMotor.class, "armclaw2");
 
         clawLeft = hardwareMap.get(Servo.class, "clawleft");
         clawRight = hardwareMap.get(Servo.class, "clawright");
 
-        clawArm.setPosition(0.3);
+
+        left.setDirection(DcMotorSimple.Direction.REVERSE);
+        clawArm.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        clawArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        //clawArm2.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
+        left.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        right.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         clawLeft.setPosition(0.1);
         clawRight.setPosition(0.8);

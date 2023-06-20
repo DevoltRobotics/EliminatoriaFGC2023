@@ -5,8 +5,8 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
-@Autonomous(name = "Autonomo")
-public class Autonomo extends LinearOpMode {
+@Autonomous(name = "Autonomo Gay")
+public class AutonomoGay extends LinearOpMode {
 
     @Override
     public void runOpMode() {
@@ -15,7 +15,11 @@ public class Autonomo extends LinearOpMode {
         waitForStart();
 
         robot.forward(10, 3);
-        robot.backwards(5, 3);
+
+        sleep(100);
+
+        robot.clawLeft.setPosition(0.1);
+        robot.clawRight.setPosition(0.8);
     }
 
 }

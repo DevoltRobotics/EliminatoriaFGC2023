@@ -2,12 +2,11 @@ package org.firstinspires.ftc.teamcode.teleop;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.util.Range;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
-@TeleOp(name = "TeleOp")
-public class PhobosTeleOp extends OpMode {
+@TeleOp(name = "Cucarachin")
+public class PhobosTeleOpCucarachin extends OpMode {
 
     Robot robot = new Robot();
 
@@ -25,7 +24,7 @@ public class PhobosTeleOp extends OpMode {
         double x;
 
         // Run wheels in tank mode (note: The joystick goes negative when pushed forward, so negate it)
-        y = -gamepad1.left_stick_y;
+        y = gamepad1.left_stick_y;
         x = gamepad1.right_stick_x;
 
         double chosenTrigger = gamepad1.left_trigger;
@@ -49,13 +48,13 @@ public class PhobosTeleOp extends OpMode {
 
         if(gamepad2.a) {
             robot.clawLeft.setPosition(0.5);
-            robot.clawRight.setPosition(0.4);
+            robot.clawRight.setPosition(0.2);
         } else if(gamepad2.b) {
             robot.clawLeft.setPosition(0.1);
             robot.clawRight.setPosition(0.8);
         } else if(gamepad2.x) {
-            robot.clawLeft.setPosition(0.4);
-            robot.clawRight.setPosition(0.5);
+            robot.clawLeft.setPosition(0.25);
+            robot.clawRight.setPosition(0.65);
         }
     }
 
