@@ -84,48 +84,48 @@ public class Robot {
         right.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
     }
 
-    public void forward(double distance, double speed, double timeout) {
+    public void adelante(double distance, double speed, double timeout) {
         encoderDrive(Math.abs(distance), Math.abs(distance), speed, timeout);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void backwards(double distance, double speed, double timeout) {
+    public void atras(double distance, double speed, double timeout) {
         encoderDrive(-Math.abs(distance), -Math.abs(distance), speed, timeout);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void turnLeft(double distance, double speed, double timeout) {
+    public void girarIzquierda(double distance, double speed, double timeout) {
         encoderDrive(-Math.abs(distance), Math.abs(distance), speed, timeout);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void turnRight(double distance, double speed, double timeout) {
+    public void girarDerecha(double distance, double speed, double timeout) {
         encoderDrive(Math.abs(distance), -Math.abs(distance), speed, timeout);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void clawClose() {
+    public void cerrarGarra() {
         clawLeft.setPosition(0.5);
         clawRight.setPosition(0.4);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void clawOpen() {
+    public void abrirGarra() {
         clawLeft.setPosition(0.1);
         clawRight.setPosition(0.8);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void clawHalf() {
+    public void garraMedioAbierta() {
         clawLeft.setPosition(0.4);
         clawRight.setPosition(0.5);
-        sleep(200);
+        esperarSegundos(0.2);
     }
 
-    public void sleep(long ms) {
+    public void esperarSegundos(double segundos) {
         if(isAuto) {
             try {
-                Thread.sleep(ms);
+                Thread.sleep((long) (segundos * 1000));
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }

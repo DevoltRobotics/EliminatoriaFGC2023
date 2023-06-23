@@ -1,11 +1,13 @@
 package org.firstinspires.ftc.teamcode.teleop;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.Robot;
 
 @TeleOp(name = "Cucarachin")
+@Disabled
 public class PhobosTeleOpCucarachin extends OpMode {
 
     Robot robot = new Robot();
