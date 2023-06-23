@@ -24,11 +24,8 @@ public class Autonomo extends LinearOpMode {
 
         robot.adelante(50, 0.2, 10); // con todo pa delante
 
-        robot.girarIzquierda(10, 0.2, 5); // girar hacia la caja
-        robot.atras(3, 0.2, 5); // atras
-
         robot.clawArm.setPower(0.3);
-        robot.esperarSegundos(3); // subir el brazo durante 3 segundos
+        robot.esperarSegundos(1.5); // subir el brazo durante 1.5 segundos
         robot.clawArm.setPower(0.08); // stop
 
         robot.adelante(3, 0.2, 5); // adelante
@@ -37,6 +34,15 @@ public class Autonomo extends LinearOpMode {
         robot.esperarSegundos(1); // bajar el brazo durante 1 segundo para anclarse a la caja
         robot.clawArm.setPower(0.08); // stop
 
-        robot.girarDerecha(10, 0.2, 5); // tirar caja
+        robot.atras(8, 0.2, 5); // tirar caja
+        
+        robot.clawArm.setPower(0.3);
+        robot.esperarSegundos(1.5); // subir el brazo durante 1.5 segundos
+        robot.clawArm.setPower(0.08); // stop
+
+        robot.atras(8, 0.2, 5); // tirar caja
+        
+        robot.girarIzquierda(8, 0.3, 5); // park zona 10
+        robot.adelante(10, 0.2, 5);
     }
 }
