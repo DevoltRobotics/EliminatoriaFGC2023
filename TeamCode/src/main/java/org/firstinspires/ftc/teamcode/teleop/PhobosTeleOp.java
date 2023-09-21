@@ -52,10 +52,10 @@ public class PhobosTeleOp extends OpMode {
 
         if(gamepad2.a) {
             robot.clawLeft.setPosition(0.5);
-            robot.clawRight.setPosition(0.4);
-        } else if(gamepad2.b) {
-            robot.clawLeft.setPosition(0.1);
             robot.clawRight.setPosition(0.8);
+        } else if(gamepad2.b) {
+            robot.clawLeft.setPosition(0.8);
+            robot.clawRight.setPosition(0.4);
         } else if(gamepad2.x) {
             robot.clawLeft.setPosition(0.4);
             robot.clawRight.setPosition(0.5);

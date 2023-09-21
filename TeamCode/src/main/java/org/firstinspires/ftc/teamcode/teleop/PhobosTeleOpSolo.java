@@ -44,15 +44,15 @@ public class PhobosTeleOpSolo extends OpMode {
 
         // START B
 
-        robot.clawArm.setPower(0.08 + (gamepad1.left_trigger - gamepad1.right_trigger) * 0.7);
+        robot.clawArm.setPower(0.08 + (gamepad1.left_trigger - gamepad1.right_trigger) * 0.4);
         //robot.clawArm2.setPower(-0.08+(gamepad1.right_trigger - gamepad1.left_trigger)* 0.7);
 
         if(gamepad1.a) {
             robot.clawLeft.setPosition(0.5);
-            robot.clawRight.setPosition(0.4);
-        } else if(gamepad1.b) {
-            robot.clawLeft.setPosition(0.1);
             robot.clawRight.setPosition(0.8);
+        } else if(gamepad1.b) {
+            robot.clawLeft.setPosition(0.8);
+            robot.clawRight.setPosition(0.4);
         } else if(gamepad1.x) {
             robot.clawLeft.setPosition(0.4);
             robot.clawRight.setPosition(0.5);
